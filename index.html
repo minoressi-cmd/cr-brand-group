@@ -1062,7 +1062,7 @@
         <div class="pricing-card featured reveal reveal-delay-1">
           <span class="pricing-badge">Most Chosen</span>
           <p class="pricing-tier">Growth Partner</p>
-          <p class="pricing-price"><s style="color:var(--muted);font-size:1.6rem;opacity:0.6;">$1,500</s> $1,250</p>
+          <p class="pricing-price"><s style="color:var(--muted);font-size:1.6rem;opacity:0.6;">$1,500</s> $500</p>
           <p class="pricing-period">per month — limited discount</p>
           <div class="pricing-divider"></div>
           <ul class="pricing-features">
@@ -1248,42 +1248,6 @@
       });
     });
 
-    // ── Form validation
-    const form = document.getElementById('contactForm');
-    const formSuccess = document.getElementById('formSuccess');
-
-    function showError(inputId, errorId) {
-      document.getElementById(inputId).classList.add('error');
-      document.getElementById(errorId).classList.add('show');
-    }
-
-    function clearErrors() {
-      form.querySelectorAll('input, textarea').forEach(el => el.classList.remove('error'));
-      form.querySelectorAll('.form-error').forEach(el => el.classList.remove('show'));
-    }
-
-    function isValidEmail(email) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      clearErrors();
-
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-      let valid = true;
-
-      if (!name) { showError('name', 'nameError'); valid = false; }
-      if (!email || !isValidEmail(email)) { showError('email', 'emailError'); valid = false; }
-      if (!message) { showError('message', 'messageError'); valid = false; }
-
-      if (valid) {
-        form.style.display = 'none';
-        formSuccess.style.display = 'block';
-      }
-    });
   </script>
 
 </body>
