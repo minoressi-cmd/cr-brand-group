@@ -3,166 +3,331 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CR Brand Group — Brand Partner for Local Businesses</title>
-  <meta name="description" content="CR Brand Group builds premium brands, websites, and marketing systems for local trades businesses. Based in CT.">
+  <title>CR Brand Group — Trade Websites, $149/mo</title>
+  <meta name="description" content="Professional websites for painters, plumbers, roofers & more. $149/month, no contracts.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --cream: #F6F4EF;
-      --cream-light: #FDFCFA;
-      --charcoal: #1A1A1A;
-      --charcoal-soft: #3D3D3D;
-      --gold: #C9A96E;
-      --gold-dim: rgba(201, 169, 110, 0.12);
-      --gold-hover: #B8944D;
-      --stone: #D4CFC6;
-      --stone-light: #E9E5DD;
-      --muted: #8A857D;
-      --white: #FFFFFF;
-      --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
-      --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --black:   #080808;
+      --ink:     #111111;
+      --paper:   #F0EBE3;
+      --white:   #FFFFFF;
+      --amber:   #D4A832;
+      --amber-d: #B8900F;
+      --amber-l: #E8C96A;
+      --warm:    #E8E0D5;
+      --muted:   #968D82;
+      --rule:    #D8D0C4;
+
+      --display: 'Barlow Condensed', 'Impact', sans-serif;
+      --serif:   'Cormorant Garamond', Georgia, serif;
+      --body:    'DM Sans', -apple-system, sans-serif;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: var(--sans);
-      color: var(--charcoal);
-      background: var(--cream);
-      line-height: 1.65;
-      font-weight: 400;
-      font-size: 16px;
+      font-family: var(--body);
+      color: var(--ink);
+      background: var(--paper);
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
+      font-size: 16px;
+      line-height: 1.6;
     }
 
-    ::selection {
-      background: var(--gold);
-      color: var(--white);
-    }
-
+    ::selection { background: var(--amber); color: var(--white); }
     img { max-width: 100%; display: block; }
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
+    button { font-family: var(--body); }
 
-    .wrap {
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 0 32px;
-    }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 
-    /* ── TYPOGRAPHY ──────────────────────── */
-    h1, h2, h3, h4 {
-      font-family: var(--serif);
-      font-weight: 400;
-      line-height: 1.15;
-    }
-
-    /* ── BUTTONS ─────────────────────────── */
-    .btn {
+    /* ══════════════════════════════════════════
+       BUTTONS
+    ══════════════════════════════════════════ */
+    .cta-primary {
       display: inline-block;
-      padding: 15px 36px;
-      font-family: var(--sans);
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 1.5px;
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      padding: 14px 36px;
+      background: var(--amber);
+      color: var(--white);
       border: none;
-      position: relative;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+      line-height: 1;
     }
 
-    .btn-gold {
-      background: var(--gold);
+    .cta-primary:hover {
+      background: var(--amber-d);
+      transform: translateY(-1px);
+    }
+
+    .cta-outline {
+      display: inline-block;
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 13px 36px;
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: border-color 0.2s ease, color 0.2s ease;
+      line-height: 1;
+    }
+
+    .cta-outline:hover {
+      border-color: var(--amber);
+      color: var(--amber);
+    }
+
+    .cta-outline-dark {
+      display: inline-block;
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 13px 36px;
+      background: transparent;
+      color: var(--ink);
+      border: 1.5px solid var(--rule);
+      cursor: pointer;
+      transition: border-color 0.2s ease;
+      line-height: 1;
+    }
+
+    .cta-outline-dark:hover { border-color: var(--ink); }
+
+    /* ══════════════════════════════════════════
+       TRADE SELECTOR OVERLAY
+    ══════════════════════════════════════════ */
+    #tradeOverlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9000;
+      background: var(--black);
+      overflow-y: auto;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    #tradeOverlay.dismissed {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .to-header {
+      padding: 24px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .to-header-logo {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
       color: var(--white);
     }
 
-    .btn-gold:hover {
-      background: var(--gold-hover);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 20px rgba(201, 169, 110, 0.3);
+    .to-header-logo span { color: var(--amber); }
+
+    .to-header-note {
+      font-family: var(--body);
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
-    .btn-ghost {
-      background: transparent;
-      color: var(--charcoal);
-      border: 1px solid var(--stone);
+    .to-body {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      min-height: calc(100vh - 73px);
     }
 
-    .btn-ghost:hover {
-      border-color: var(--charcoal);
+    .to-left {
+      padding: 60px 40px;
+      border-right: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    /* ── REVEAL ANIMATION ────────────────── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                  transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    .to-left-eyebrow {
+      font-family: var(--display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 28px;
     }
 
-    .reveal.is-visible {
-      opacity: 1;
-      transform: none;
+    .to-left h2 {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(4rem, 8vw, 7rem);
+      line-height: 0.92;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 32px;
     }
 
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
+    .to-left p {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.7;
+      font-weight: 300;
+      max-width: 280px;
+    }
 
-    /* ═══════════════════════════════════════
+    .to-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .to-trade-row {
+      display: grid;
+      grid-template-columns: 60px 1fr 40px;
+      align-items: center;
+      padding: 0 40px;
+      height: 80px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      cursor: pointer;
+      transition: background 0.15s ease;
+      gap: 16px;
+    }
+
+    .to-trade-row:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
+
+    .to-trade-row:hover {
+      background: var(--amber);
+    }
+
+    .to-trade-row:hover .to-row-num,
+    .to-trade-row:hover .to-row-name,
+    .to-trade-row:hover .to-row-arrow {
+      color: var(--black);
+    }
+
+    .to-row-num {
+      font-family: var(--display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.2);
+      transition: color 0.15s ease;
+    }
+
+    .to-row-name {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--white);
+      transition: color 0.15s ease;
+    }
+
+    .to-row-arrow {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.2);
+      text-align: right;
+      transition: color 0.15s ease;
+    }
+
+    /* ══════════════════════════════════════════
        NAV
-       ═══════════════════════════════════════ */
+    ══════════════════════════════════════════ */
     .nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(246, 244, 239, 0.92);
+      background: rgba(8,8,8,0.95);
       backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--stone-light);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
     .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 68px;
+      height: 64px;
     }
 
     .nav-logo {
-      font-family: var(--serif);
-      font-size: 1.25rem;
-      font-weight: 500;
-      letter-spacing: 0.5px;
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .nav-logo span { color: var(--amber); }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
     }
 
     .nav-links {
       display: flex;
-      gap: 32px;
+      gap: 28px;
       align-items: center;
     }
 
     .nav-links a {
-      font-size: 0.72rem;
-      letter-spacing: 2px;
+      font-size: 0.7rem;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
       font-weight: 400;
-      color: var(--muted);
-      transition: color 0.3s ease;
+      color: rgba(255,255,255,0.4);
+      transition: color 0.2s ease;
     }
 
-    .nav-links a:hover {
-      color: var(--charcoal);
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-trade-pill {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212,168,50,0.12);
+      border: 1px solid rgba(212,168,50,0.3);
+      padding: 5px 14px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .nav-trade-pill.show { display: flex; }
+    .nav-trade-pill:hover { background: rgba(212,168,50,0.2); }
+
+    .nav-trade-pill-label {
+      font-family: var(--display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--amber-l);
     }
 
     .nav-hamburger {
@@ -178,55 +343,44 @@
     .nav-hamburger span {
       display: block;
       width: 22px;
-      height: 1px;
-      background: var(--charcoal);
-      transition: all 0.3s ease;
+      height: 1.5px;
+      background: var(--white);
+      transition: all 0.25s ease;
     }
 
-    .nav-hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(4px, 4px);
-    }
+    .nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
     .nav-hamburger.active span:nth-child(2) { opacity: 0; }
-    .nav-hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(4px, -4px);
-    }
+    .nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
 
-    /* ═══════════════════════════════════════
+    /* ══════════════════════════════════════════
        HERO
-       ═══════════════════════════════════════ */
+    ══════════════════════════════════════════ */
     .hero {
+      background: var(--black);
       min-height: 100vh;
       min-height: 100svh;
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      align-items: stretch;
+      padding-top: 64px;
+    }
+
+    .hero-left {
+      padding: 80px 60px 80px 40px;
       display: flex;
-      align-items: center;
-      padding: 140px 32px 100px;
-      position: relative;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      width: 38%;
-      background: var(--cream-light);
-      z-index: -1;
-    }
-
-    .hero-content {
-      max-width: 1160px;
-      margin: 0 auto;
-      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid rgba(255,255,255,0.07);
     }
 
     .hero-eyebrow {
-      font-size: 0.7rem;
-      letter-spacing: 3px;
+      font-family: var(--display);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 4px;
       text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 400;
-      margin-bottom: 28px;
+      color: var(--amber);
+      margin-bottom: 32px;
       display: flex;
       align-items: center;
       gap: 16px;
@@ -235,1020 +389,1256 @@
     .hero-eyebrow::before {
       content: '';
       display: block;
-      width: 40px;
-      height: 1px;
-      background: var(--gold);
+      width: 28px;
+      height: 1.5px;
+      background: var(--amber);
     }
 
     .hero h1 {
-      font-size: clamp(3rem, 6.5vw, 5.5rem);
-      line-height: 1.05;
-      margin-bottom: 32px;
-      max-width: 700px;
-      font-weight: 400;
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      color: var(--gold);
-    }
-
-    .hero-sub {
-      font-size: 1.05rem;
-      color: var(--muted);
-      line-height: 1.75;
-      margin-bottom: 48px;
-      max-width: 440px;
-      font-weight: 300;
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    /* ═══════════════════════════════════════
-       SERVICES
-       ═══════════════════════════════════════ */
-    .services {
-      padding: 140px 0 100px;
-    }
-
-    .services-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 72px;
-      gap: 40px;
-    }
-
-    .services-top-left {
-      max-width: 480px;
-    }
-
-    .services-label {
-      font-size: 0.7rem;
-      letter-spacing: 3px;
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(3.5rem, 7vw, 6.5rem);
+      line-height: 0.9;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
-      font-weight: 400;
-    }
-
-    .services-top h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-    }
-
-    .services-top-right {
-      max-width: 320px;
-      font-size: 0.92rem;
-      color: var(--muted);
-      line-height: 1.7;
-      text-align: right;
-      font-weight: 300;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--stone-light);
-      border: 1px solid var(--stone-light);
-    }
-
-    .service-card {
-      background: var(--cream);
-      padding: 44px 28px 36px;
-      transition: background 0.4s ease;
-      position: relative;
-    }
-
-    .service-card:hover {
-      background: var(--cream-light);
-    }
-
-    .service-num {
-      font-size: 0.65rem;
-      letter-spacing: 2px;
-      color: var(--stone);
-      margin-bottom: 28px;
-      font-weight: 500;
-    }
-
-    .service-card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 14px;
-      font-weight: 500;
-    }
-
-    .service-card p {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.65;
-      font-weight: 300;
-    }
-
-    /* ═══════════════════════════════════════
-       PRICING
-       ═══════════════════════════════════════ */
-    .pricing {
-      padding: 100px 0 140px;
-      border-top: 1px solid var(--stone-light);
-    }
-
-    .pricing-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 72px;
-      gap: 40px;
-    }
-
-    .pricing-top-left {
-      max-width: 480px;
-    }
-
-    .pricing-label {
-      font-size: 0.7rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
-      font-weight: 400;
-    }
-
-    .pricing-top h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-    }
-
-    .pricing-top-right {
-      max-width: 320px;
-      font-size: 0.92rem;
-      color: var(--muted);
-      line-height: 1.7;
-      text-align: right;
-      font-weight: 300;
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--stone-light);
-      border: 1px solid var(--stone-light);
-    }
-
-    .pricing-card {
-      background: var(--cream);
-      padding: 48px 36px;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      transition: background 0.4s ease;
-    }
-
-    .pricing-card:hover {
-      background: var(--cream-light);
-    }
-
-    .pricing-card.featured {
-      background: var(--cream-light);
-    }
-
-    .pricing-card.featured::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: var(--gold);
-    }
-
-    .pricing-badge {
-      display: inline-block;
-      font-size: 0.6rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid var(--gold-dim);
-      padding: 4px 12px;
-      margin-bottom: 20px;
-      align-self: flex-start;
-      font-weight: 400;
-    }
-
-    .pricing-tier {
-      font-family: var(--serif);
-      font-size: 1.25rem;
-      margin-bottom: 20px;
-    }
-
-    .pricing-price {
-      font-family: var(--serif);
-      font-size: 2.8rem;
-      font-weight: 400;
-      margin-bottom: 4px;
-      line-height: 1;
-    }
-
-    .pricing-period {
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-bottom: 32px;
-      letter-spacing: 0.5px;
-    }
-
-    .pricing-divider {
-      width: 100%;
-      height: 1px;
-      background: var(--stone-light);
-      margin-bottom: 28px;
-    }
-
-    .pricing-features {
-      margin-bottom: 40px;
-      flex-grow: 1;
-    }
-
-    .pricing-features li {
-      font-size: 0.85rem;
-      padding: 7px 0;
-      color: var(--muted);
-      font-weight: 300;
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-    }
-
-    .pricing-features li::before {
-      content: '—';
-      color: var(--gold);
-      font-size: 0.7rem;
-      flex-shrink: 0;
-    }
-
-    .pricing-card .btn-gold {
-      text-align: center;
-    }
-
-    .pricing-card .btn-ghost {
-      text-align: center;
-    }
-
-    /* ═══════════════════════════════════════
-       INSTAGRAM / CONTENT SYSTEM
-       ═══════════════════════════════════════ */
-    .content-system {
-      padding: 140px 0 100px;
-    }
-
-    .content-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 72px;
-      gap: 40px;
-    }
-
-    .content-top-left {
-      max-width: 480px;
-    }
-
-    .content-label {
-      font-size: 0.7rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
-      font-weight: 400;
-    }
-
-    .content-top h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-    }
-
-    .content-top-right {
-      max-width: 320px;
-      font-size: 0.92rem;
-      color: var(--muted);
-      line-height: 1.7;
-      text-align: right;
-      font-weight: 300;
-    }
-
-    .pillars {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      margin-bottom: 96px;
-    }
-
-    .pillar {
-      padding: 32px 24px 28px;
-      border: 1px solid var(--stone-light);
-      position: relative;
-      transition: border-color 0.4s ease;
-    }
-
-    .pillar:hover {
-      border-color: var(--gold);
-    }
-
-    .pillar-num {
-      font-size: 0.6rem;
-      letter-spacing: 2px;
-      color: var(--gold);
-      margin-bottom: 20px;
-      font-weight: 500;
-    }
-
-    .pillar h4 {
-      font-size: 1.05rem;
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
-
-    .pillar p {
-      font-size: 0.82rem;
-      color: var(--muted);
-      line-height: 1.6;
-      font-weight: 300;
-    }
-
-    /* Calendar */
-    .calendar-section {
-      border-top: 1px solid var(--stone-light);
-      padding-top: 64px;
-    }
-
-    .calendar-header-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 32px;
-    }
-
-    .calendar-header-row h3 {
-      font-size: 1.3rem;
-    }
-
-    .calendar-header-row span {
-      font-size: 0.72rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .calendar-table {
-      width: 100%;
-      border-collapse: collapse;
-      border: 1px solid var(--stone-light);
-    }
-
-    .calendar-table th {
-      font-size: 0.68rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--muted);
-      font-weight: 400;
-      padding: 14px 16px;
-      text-align: left;
-      border-bottom: 1px solid var(--stone-light);
-      background: var(--cream-light);
-    }
-
-    .calendar-table td {
-      padding: 14px 16px;
-      border-bottom: 1px solid var(--stone-light);
-      border-right: 1px solid var(--stone-light);
-      font-size: 0.82rem;
-      vertical-align: middle;
-    }
-
-    .calendar-table td:last-child {
-      border-right: none;
-    }
-
-    .calendar-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .calendar-table .week-label {
-      font-size: 0.68rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 500;
-      background: var(--cream-light);
-      width: 90px;
-    }
-
-    .cal-tag {
-      display: inline-block;
-      padding: 5px 12px;
-      font-size: 0.72rem;
-      font-weight: 400;
-      letter-spacing: 0.3px;
-    }
-
-    .cal-tag.t-ba { color: #7B6B43; background: rgba(201, 169, 110, 0.1); }
-    .cal-tag.t-rv { color: #436B5C; background: rgba(67, 107, 92, 0.08); }
-    .cal-tag.t-tp { color: #5C4376; background: rgba(92, 67, 118, 0.07); }
-    .cal-tag.t-lc { color: #43607B; background: rgba(67, 96, 123, 0.08); }
-
-    /* ═══════════════════════════════════════
-       TRUST BAR
-       ═══════════════════════════════════════ */
-    .trust {
-      padding: 72px 0;
-      border-top: 1px solid var(--stone-light);
-      border-bottom: 1px solid var(--stone-light);
-    }
-
-    .trust-inner {
-      display: flex;
-      justify-content: center;
-      gap: 80px;
-    }
-
-    .trust-stat {
-      text-align: center;
-    }
-
-    .trust-val {
-      font-family: var(--serif);
-      font-size: 2.2rem;
-      font-weight: 400;
-      display: block;
-      line-height: 1.2;
-      margin-bottom: 6px;
-    }
-
-    .trust-desc {
-      font-size: 0.72rem;
-      color: var(--muted);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      font-weight: 300;
-    }
-
-    /* ═══════════════════════════════════════
-       CONTACT
-       ═══════════════════════════════════════ */
-    .contact {
-      padding: 140px 0;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .contact-left {
-      padding-top: 20px;
-    }
-
-    .contact-label {
-      font-size: 0.7rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
-      font-weight: 400;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .contact-label::before {
-      content: '';
-      display: block;
-      width: 32px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    .contact-left h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--white);
       margin-bottom: 24px;
     }
 
-    .contact-left p {
-      font-size: 0.95rem;
+    .hero h1 .accent {
+      color: var(--amber);
+      display: block;
+    }
+
+    .hero-serif {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: rgba(255,255,255,0.45);
+      line-height: 1.65;
+      margin-bottom: 48px;
+      max-width: 460px;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .hero-right {
+      padding: 80px 40px 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .price-block {
+      margin-bottom: 36px;
+    }
+
+    .price-label {
+      font-family: var(--display);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 4px;
+    }
+
+    .price-big {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(5rem, 10vw, 9rem);
+      line-height: 0.85;
+      color: var(--white);
+      letter-spacing: -2px;
+    }
+
+    .price-per {
+      font-family: var(--display);
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-top: 8px;
+    }
+
+    .price-rule {
+      width: 100%;
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+      margin: 28px 0;
+    }
+
+    .include-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 32px;
+    }
+
+    .include-list li {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 300;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .include-list li::before {
+      content: '';
+      width: 16px;
+      height: 1px;
+      background: var(--amber);
+      flex-shrink: 0;
+    }
+
+    .hero-right .cta-primary {
+      width: 100%;
+      text-align: center;
+    }
+
+    .hero-fine {
+      margin-top: 10px;
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    /* ══════════════════════════════════════════
+       MARQUEE
+    ══════════════════════════════════════════ */
+    .marquee {
+      background: var(--amber);
+      padding: 13px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      animation: scroll 25s linear infinite;
+    }
+
+    .marquee-item {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--black);
+      padding: 0 36px;
+    }
+
+    .marquee-dot {
+      color: rgba(0,0,0,0.3);
+    }
+
+    @keyframes scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ══════════════════════════════════════════
+       PROCESS — numbered strip
+    ══════════════════════════════════════════ */
+    .process {
+      background: var(--paper);
+      padding: 120px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .section-label {
+      font-family: var(--display);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 12px;
+    }
+
+    .section-heading {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      text-transform: uppercase;
+      line-height: 0.95;
+      color: var(--ink);
+      margin-bottom: 64px;
+    }
+
+    .section-heading em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      text-transform: none;
+      color: var(--amber);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--rule);
+    }
+
+    .step {
+      padding: 48px 40px 44px;
+      border-right: 1px solid var(--rule);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step:last-child { border-right: none; }
+
+    .step-bg-num {
+      position: absolute;
+      bottom: -16px;
+      right: -8px;
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: 9rem;
+      color: rgba(0,0,0,0.04);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .step-num {
+      font-family: var(--display);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--amber);
+      margin-bottom: 20px;
+    }
+
+    .step h3 {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 12px;
+      line-height: 1;
+    }
+
+    .step p {
+      font-size: 0.88rem;
       color: var(--muted);
       line-height: 1.75;
-      margin-bottom: 40px;
+      font-weight: 300;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ══════════════════════════════════════════
+       FEATURES — full-width rows
+    ══════════════════════════════════════════ */
+    .features {
+      background: var(--white);
+      padding: 120px 0;
+    }
+
+    .feature-rows {
+      border-top: 1px solid var(--rule);
+      margin-top: 64px;
+    }
+
+    .feature-row {
+      display: grid;
+      grid-template-columns: 60px 1fr 1fr;
+      gap: 40px;
+      padding: 36px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: start;
+      transition: background 0.2s ease;
+    }
+
+    .feature-row:hover { background: rgba(212,168,50,0.03); }
+
+    .feature-row-num {
+      font-family: var(--display);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: rgba(0,0,0,0.2);
+      padding-top: 4px;
+    }
+
+    .feature-row-title {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .feature-row-body {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* ══════════════════════════════════════════
+       DARK CTA SECTION
+    ══════════════════════════════════════════ */
+    .cta-section {
+      background: var(--black);
+      padding: 120px 0;
+    }
+
+    .cta-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .cta-left h2 {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      text-transform: uppercase;
+      line-height: 0.92;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+
+    .cta-left h2 em {
+      display: block;
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      text-transform: none;
+      color: var(--amber);
+      font-size: 0.8em;
+      line-height: 1.4;
+    }
+
+    .cta-left p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.75;
       font-weight: 300;
       max-width: 380px;
     }
 
-    .contact-detail {
-      font-size: 0.78rem;
-      color: var(--muted);
-      letter-spacing: 0.5px;
+    .cta-right {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 20px;
     }
 
-    .contact-detail span {
-      color: var(--charcoal);
+    .code-reveal {
+      background: rgba(212,168,50,0.07);
+      border: 1px solid rgba(212,168,50,0.2);
+      padding: 28px 32px;
+    }
+
+    .code-reveal-label {
+      font-family: var(--display);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 6px;
+    }
+
+    .code-reveal-value {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: 2.8rem;
+      letter-spacing: 4px;
+      color: var(--amber-l);
+      line-height: 1;
+    }
+
+    .code-reveal-value.placeholder {
+      font-size: 1rem;
       font-weight: 400;
+      font-family: var(--body);
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0;
+      font-style: italic;
     }
 
-    .contact-form {
-      background: var(--cream-light);
-      padding: 48px 40px;
-      border: 1px solid var(--stone-light);
+    .code-note {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.25);
     }
 
-    .form-row {
+    .cta-right .cta-primary {
+      width: 100%;
+      text-align: center;
+      padding: 18px 36px;
+      font-size: 1.05rem;
+    }
+
+    /* ══════════════════════════════════════════
+       CONTACT
+    ══════════════════════════════════════════ */
+    .contact {
+      padding: 120px 0;
+      background: var(--paper);
+    }
+
+    .contact-split {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 80px;
+      align-items: end;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--rule);
     }
 
-    .form-group {
-      margin-bottom: 18px;
-    }
-
-    .form-group.full { grid-column: 1 / -1; }
-
-    .form-group label {
-      display: block;
-      font-size: 0.7rem;
-      letter-spacing: 1.5px;
+    .contact-left h2 {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
       text-transform: uppercase;
+      line-height: 0.92;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .contact-left h2 em {
+      font-family: var(--serif);
+      font-style: italic;
       font-weight: 400;
-      margin-bottom: 8px;
-      color: var(--muted);
+      text-transform: none;
+      color: var(--amber);
     }
 
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 13px 0;
-      font-family: var(--sans);
+    .contact-left p {
       font-size: 0.92rem;
-      border: none;
-      border-bottom: 1px solid var(--stone);
-      background: transparent;
-      color: var(--charcoal);
-      outline: none;
-      transition: border-color 0.3s ease;
-      border-radius: 0;
-      -webkit-appearance: none;
+      color: var(--muted);
+      line-height: 1.75;
       font-weight: 300;
+      max-width: 360px;
     }
 
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: var(--stone);
+    .contact-right {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: flex-start;
     }
 
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--gold);
-    }
-
-    .form-group input.error,
-    .form-group textarea.error {
-      border-color: #B44;
-    }
-
-    .form-group textarea {
-      height: 100px;
-      resize: vertical;
-    }
-
-    .form-error {
-      font-size: 0.72rem;
-      color: #B44;
-      margin-top: 6px;
-      display: none;
-      font-weight: 300;
-    }
-
-    .form-error.show { display: block; }
-
-    .contact-form .btn {
-      width: 100%;
-      text-align: center;
-      margin-top: 12px;
-    }
-
-    .form-success {
-      display: none;
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    .form-success h3 {
+    .contact-link {
+      font-family: var(--serif);
+      font-style: italic;
       font-size: 1.5rem;
-      margin-bottom: 12px;
+      color: var(--ink);
+      border-bottom: 1.5px solid var(--amber);
+      padding-bottom: 3px;
+      transition: color 0.2s ease;
     }
 
-    .form-success p {
+    .contact-link:hover { color: var(--amber); }
+
+    .contact-phone {
+      font-family: var(--display);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 3px;
       color: var(--muted);
-      font-size: 0.92rem;
-      font-weight: 300;
     }
 
-    /* ═══════════════════════════════════════
+    /* ══════════════════════════════════════════
        FOOTER
-       ═══════════════════════════════════════ */
+    ══════════════════════════════════════════ */
     .footer {
-      padding: 48px 0;
-      border-top: 1px solid var(--stone-light);
+      background: var(--black);
+      padding: 36px 0;
     }
 
     .footer-inner {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
     .footer-logo {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      font-weight: 500;
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--white);
     }
 
-    .footer-mid {
-      font-size: 0.78rem;
-      color: var(--muted);
-      font-weight: 300;
+    .footer-logo span { color: var(--amber); }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.5px;
     }
 
-    .footer-links {
+    .footer-nav {
       display: flex;
       gap: 24px;
     }
 
-    .footer-links a {
-      font-size: 0.68rem;
-      letter-spacing: 1.5px;
+    .footer-nav a {
+      font-family: var(--display);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: var(--muted);
-      transition: color 0.3s ease;
+      color: rgba(255,255,255,0.25);
+      transition: color 0.2s ease;
+    }
+
+    .footer-nav a:hover { color: var(--amber); }
+
+    /* ══════════════════════════════════════════
+       BUY MODAL
+    ══════════════════════════════════════════ */
+    #modalBackdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 5000;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    #modalBackdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal {
+      background: var(--ink);
+      border-top: 3px solid var(--amber);
+      max-width: 480px;
+      width: 100%;
+      padding: 0;
+      position: relative;
+      transform: translateY(16px);
+      transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    #modalBackdrop.open .modal { transform: translateY(0); }
+
+    .modal-top {
+      padding: 36px 40px 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.3);
+      font-size: 1.1rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 6px;
+      transition: color 0.2s ease;
+    }
+
+    .modal-close:hover { color: var(--white); }
+
+    .modal-eyebrow {
+      font-family: var(--display);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 10px;
+    }
+
+    .modal-title {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: 2.2rem;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .modal-body {
+      padding: 28px 40px 36px;
+    }
+
+    .modal-code-block {
+      background: rgba(212,168,50,0.07);
+      border: 1px solid rgba(212,168,50,0.2);
+      padding: 20px 24px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .modal-code-left {}
+
+    .modal-code-lbl {
+      font-family: var(--display);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      margin-bottom: 4px;
+    }
+
+    .modal-code-val {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: 2.2rem;
+      letter-spacing: 4px;
+      color: var(--amber-l);
+      line-height: 1;
+    }
+
+    .modal-copy {
+      font-family: var(--display);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: none;
+      border: 1px solid rgba(212,168,50,0.3);
+      color: var(--amber);
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .modal-copy:hover {
+      background: var(--amber);
+      color: var(--black);
+      border-color: var(--amber);
+    }
+
+    .modal-code-note {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.2);
+      margin-bottom: 24px;
+    }
+
+    .modal-price-line {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .modal-price-num {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: 3.5rem;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .modal-price-per {
+      font-family: var(--display);
+      font-size: 0.85rem;
       font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
     }
 
-    .footer-links a:hover {
-      color: var(--charcoal);
+    .modal-stripe-btn {
+      display: block;
+      width: 100%;
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 16px;
+      background: var(--amber);
+      color: var(--white);
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease;
     }
 
-    /* ═══════════════════════════════════════
+    .modal-stripe-btn:hover { background: var(--amber-d); }
+
+    .modal-fine {
+      margin-top: 10px;
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.18);
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    /* ══════════════════════════════════════════
+       SCROLL REVEAL
+    ══════════════════════════════════════════ */
+    .js-reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .js-reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .js-reveal-d1 { transition-delay: 0.1s; }
+    .js-reveal-d2 { transition-delay: 0.2s; }
+    .js-reveal-d3 { transition-delay: 0.3s; }
+
+    /* ══════════════════════════════════════════
        RESPONSIVE
-       ═══════════════════════════════════════ */
+    ══════════════════════════════════════════ */
     @media (max-width: 1024px) {
-      .hero::after { display: none; }
-
-      .services-top,
-      .content-top {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .services-top-right,
-      .content-top-right {
-        text-align: left;
-      }
-
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .pricing-grid {
-        grid-template-columns: 1fr;
-        max-width: 440px;
-        margin: 0 auto;
-      }
-
-      .pricing-top {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .pricing-top-right {
-        text-align: left;
-      }
-
-      .pillars {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+      .hero-right { padding: 60px 40px 80px; }
+      .price-big { font-size: clamp(5rem, 15vw, 8rem); }
+      .to-body { grid-template-columns: 1fr; min-height: auto; }
+      .to-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 40px; }
+      .to-left h2 { font-size: 4rem; }
+      .cta-inner { grid-template-columns: 1fr; gap: 48px; }
+      .contact-split { grid-template-columns: 1fr; gap: 40px; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .step { border-right: none; border-bottom: 1px solid var(--rule); }
+      .step:last-child { border-bottom: none; }
+      .feature-row { grid-template-columns: 50px 1fr; }
+      .feature-row-body { grid-column: 2; }
     }
 
     @media (max-width: 768px) {
       .wrap { padding: 0 20px; }
-
-      .nav-links {
-        display: none;
+      .hero-left { padding: 60px 20px 48px; }
+      .hero-right { padding: 48px 20px 60px; }
+      .to-header { padding: 20px; }
+      .to-left { padding: 32px 20px; }
+      .to-trade-row { padding: 0 20px; }
+      .nav-right .nav-links { display: none; }
+      .nav-right .nav-links.open {
+        display: flex;
         position: absolute;
-        top: 68px;
-        left: 0;
-        right: 0;
-        background: rgba(246, 244, 239, 0.98);
-        backdrop-filter: blur(12px);
+        top: 64px; left: 0; right: 0;
+        background: rgba(8,8,8,0.98);
         flex-direction: column;
-        padding: 28px 20px;
-        gap: 20px;
-        border-bottom: 1px solid var(--stone-light);
+        padding: 20px;
+        gap: 16px;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
       }
-
-      .nav-links.open { display: flex; }
       .nav-hamburger { display: flex; }
-
-      .hero { padding: 120px 20px 80px; }
-      .hero h1 { font-size: clamp(2.2rem, 9vw, 3.2rem); }
-
-      .services-grid,
-      .pillars {
-        grid-template-columns: 1fr;
-        gap: 0;
-        background: var(--stone-light);
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .trust-inner {
-        flex-direction: column;
-        gap: 36px;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-      }
-
-      .calendar-table {
-        display: block;
-        overflow-x: auto;
-      }
-
-      .contact-form {
-        padding: 32px 24px;
-      }
+      .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+      .modal-top, .modal-body { padding-left: 24px; padding-right: 24px; }
+      .feature-row { grid-template-columns: 1fr; gap: 8px; }
+      .feature-row-num { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="wrap nav-inner">
-      <a href="#" class="nav-logo">CR Brand Group</a>
+<!-- ═══════════════════════════════════════════
+     TRADE SELECTOR OVERLAY
+═══════════════════════════════════════════ -->
+<div id="tradeOverlay">
+  <div class="to-header">
+    <div class="to-header-logo">CR Brand <span>Group</span></div>
+    <div class="to-header-note">Websites for Trades</div>
+  </div>
+  <div class="to-body">
+    <div class="to-left">
+      <p class="to-left-eyebrow">Step 1 of 1</p>
+      <h2>WHAT'S<br>YOUR<br>TRADE?</h2>
+      <p>Select your trade and we'll unlock your exclusive discount code — applied automatically at checkout.</p>
+    </div>
+    <div class="to-right">
+      <div class="to-trade-row" data-trade="PAINTER">
+        <span class="to-row-num">01</span>
+        <span class="to-row-name">Painter</span>
+        <span class="to-row-arrow">→</span>
+      </div>
+      <div class="to-trade-row" data-trade="PLUMBER">
+        <span class="to-row-num">02</span>
+        <span class="to-row-name">Plumber</span>
+        <span class="to-row-arrow">→</span>
+      </div>
+      <div class="to-trade-row" data-trade="ROOFER">
+        <span class="to-row-num">03</span>
+        <span class="to-row-name">Roofer</span>
+        <span class="to-row-arrow">→</span>
+      </div>
+      <div class="to-trade-row" data-trade="HANDYMAN">
+        <span class="to-row-num">04</span>
+        <span class="to-row-name">Handyman</span>
+        <span class="to-row-arrow">→</span>
+      </div>
+      <div class="to-trade-row" data-trade="HVAC">
+        <span class="to-row-num">05</span>
+        <span class="to-row-name">HVAC</span>
+        <span class="to-row-arrow">→</span>
+      </div>
+      <div class="to-trade-row" data-trade="CONTRACTOR">
+        <span class="to-row-num">06</span>
+        <span class="to-row-name">Contractor</span>
+        <span class="to-row-arrow">→</span>
+      </div>
+      <div class="to-trade-row" data-trade="ELECTRICIAN">
+        <span class="to-row-num">07</span>
+        <span class="to-row-name">Electrician</span>
+        <span class="to-row-arrow">→</span>
+      </div>
+      <div class="to-trade-row" data-trade="DRYWALL">
+        <span class="to-row-num">08</span>
+        <span class="to-row-name">Drywall</span>
+        <span class="to-row-arrow">→</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     NAV
+═══════════════════════════════════════════ -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="#" class="nav-logo">CR Brand <span>Group</span></a>
+    <div class="nav-right">
       <ul class="nav-links" id="navLinks">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#features">Included</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button class="nav-hamburger" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-trade-pill" id="navTradePill" title="Change trade">
+        <span class="nav-trade-pill-label" id="navTradeName"></span>
+      </div>
+      <button class="cta-primary" data-action="buy" style="padding:10px 22px;font-size:0.75rem;">Get Your Site</button>
     </div>
-  </nav>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <p class="hero-eyebrow reveal">Brand Partner for Local Businesses</p>
-      <h1 class="reveal reveal-delay-1">Your brand,<br>built to <em>win.</em></h1>
-      <p class="hero-sub reveal reveal-delay-2">You're great at what you do. We make sure everyone else knows it too. Websites, Instagram, ads — all handled, all working together.</p>
-      <div class="hero-ctas reveal reveal-delay-3">
-        <a href="#contact" class="btn btn-gold">Get Started</a>
-      </div>
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Websites for trade pros</p>
+    <h1>
+      WEBSITES<br>
+      THAT MAKE<br>
+      YOUR PHONE<br>
+      <span class="accent">RING.</span>
+    </h1>
+    <p class="hero-serif">Built for painters, plumbers, roofers, and every trade in between — not for startups, not for restaurants.</p>
+    <div class="hero-actions">
+      <button class="cta-primary" data-action="buy">Get Your Website →</button>
+      <a href="#features" class="cta-outline">What's Included</a>
     </div>
-  </section>
-
-  <!-- PRICING -->
-  <section class="pricing" id="pricing">
-    <div class="wrap">
-      <div class="pricing-top">
-        <div class="pricing-top-left reveal">
-          <p class="pricing-label">Packages</p>
-          <h2>Pick your level.<br>Scale from there.</h2>
-        </div>
-        <p class="pricing-top-right reveal reveal-delay-1">Month-to-month. No contracts. If we don't earn your business every 30 days, we don't deserve it.</p>
-      </div>
-      <div class="pricing-grid">
-        <div class="pricing-card reveal">
-          <p class="pricing-tier">Foundation</p>
-          <p class="pricing-price"><s style="color:var(--muted);font-size:1.6rem;opacity:0.6;">$750</s> $500</p>
-          <p class="pricing-period">per month — limited discount</p>
-          <div class="pricing-divider"></div>
-          <ul class="pricing-features">
-            <li>One-page website that actually converts</li>
-            <li>Starter logo + brand colors</li>
-            <li>8 Instagram posts, done for you</li>
-            <li>Monthly numbers breakdown</li>
-            <li>Email support when you need it</li>
-          </ul>
-          <a href="#contact" class="btn btn-ghost">Get Started</a>
-        </div>
-        <div class="pricing-card featured reveal reveal-delay-1">
-          <span class="pricing-badge">Most Chosen</span>
-          <p class="pricing-tier">Growth Partner</p>
-          <p class="pricing-price"><s style="color:var(--muted);font-size:1.6rem;opacity:0.6;">$1,500</s> $1,250</p>
-          <p class="pricing-period">per month — limited discount</p>
-          <div class="pricing-divider"></div>
-          <ul class="pricing-features">
-            <li>Full website + SEO so you rank locally</li>
-            <li>Complete brand identity system</li>
-            <li>12 Instagram posts + content strategy</li>
-            <li>Google Ads bringing in real leads</li>
-            <li>Strategy calls every two weeks</li>
-            <li>Priority response, always</li>
-          </ul>
-          <a href="#contact" class="btn btn-gold">Get Started</a>
-        </div>
-        <div class="pricing-card reveal reveal-delay-2">
-          <p class="pricing-tier">Full Brand Partner</p>
-          <p class="pricing-price">$2,500+</p>
-          <p class="pricing-period">per month</p>
-          <div class="pricing-divider"></div>
-          <ul class="pricing-features">
-            <li>Custom website with ongoing updates</li>
-            <li>Full brand overhaul, top to bottom</li>
-            <li>16 posts + stories + reels strategy</li>
-            <li>Google + Meta Ads, fully managed</li>
-            <li>Weekly strategy sessions</li>
-            <li>Your own dedicated account manager</li>
-            <li>Content photo direction + guidance</li>
-          </ul>
-          <a href="#contact" class="btn btn-ghost">Let's Talk</a>
-        </div>
-      </div>
+  </div>
+  <div class="hero-right">
+    <div class="price-block">
+      <p class="price-label">One plan. No contracts.</p>
+      <p class="price-big"><s style="opacity:0.25;font-size:0.55em;vertical-align:middle;">$149</s> $0</p>
+      <p class="price-per">first month free with your code</p>
     </div>
-  </section>
+    <div class="price-rule"></div>
+    <ul class="include-list">
+      <li>Conversion-focused website for your trade</li>
+      <li>Mobile-first — sharp on every screen</li>
+      <li>Local SEO — rank in your area</li>
+      <li>Click-to-call &amp; contact forms</li>
+      <li>Hosting, security &amp; updates included</li>
+      <li>Live in days, not months</li>
+    </ul>
+    <button class="cta-primary" data-action="buy">Claim Your Discount</button>
+    <p class="hero-fine">No contract · Cancel anytime</p>
+  </div>
+</section>
 
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="wrap">
-      <div class="services-top">
-        <div class="services-top-left reveal">
-          <p class="services-label">What We Do</p>
-          <h2>The whole system,<br>not just pieces</h2>
-        </div>
-        <p class="services-top-right reveal reveal-delay-1">Most agencies sell you one thing. We build the full engine — brand, site, social, ads — all pulling in the same direction.</p>
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="marquee-item">Painters <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Plumbers <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Roofers <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Electricians <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Contractors <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">HVAC Pros <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Handymen <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Drywall <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">$149 / Month <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">No Contracts <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Painters <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Plumbers <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Roofers <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Electricians <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Contractors <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">HVAC Pros <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Handymen <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Drywall <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">$149 / Month <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">No Contracts <span class="marquee-dot">✦</span></span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PROCESS
+═══════════════════════════════════════════ -->
+<section class="process" id="process">
+  <div class="wrap">
+    <p class="section-label js-reveal">How It Works</p>
+    <h2 class="section-heading js-reveal js-reveal-d1">THREE STEPS.<br><em>That's really it.</em></h2>
+    <div class="steps-grid">
+      <div class="step js-reveal">
+        <p class="step-num">STEP 01</p>
+        <h3>Pick Your Trade</h3>
+        <p>Tell us what you do. We build every site specifically for your trade — the right words, the right layout, the right calls to action for your customers.</p>
+        <span class="step-bg-num">01</span>
       </div>
-      <div class="services-grid">
-        <div class="service-card reveal">
-          <p class="service-num">01</p>
-          <h3>Websites</h3>
-          <p>When someone Googles "plumber near me" and lands on your site, they should call — not click back. We build sites that close.</p>
-        </div>
-        <div class="service-card reveal reveal-delay-1">
-          <p class="service-num">02</p>
-          <h3>Branding</h3>
-          <p>Your logo's on your truck, your shirts, your invoices. It should look like you charge what you're worth. We make sure it does.</p>
-        </div>
-        <div class="service-card reveal reveal-delay-2">
-          <p class="service-num">03</p>
-          <h3>Instagram</h3>
-          <p>You do incredible work every day. We turn it into content that gets you followed, trusted, and called — without you lifting a finger.</p>
-        </div>
-        <div class="service-card reveal reveal-delay-3">
-          <p class="service-num">04</p>
-          <h3>Paid Ads</h3>
-          <p>Homeowners in your zip code are searching right now. We put your name in front of them at the exact moment they need you.</p>
-        </div>
+      <div class="step js-reveal js-reveal-d1">
+        <p class="step-num">STEP 02</p>
+        <h3>We Build It</h3>
+        <p>We design and launch your site in days. You don't touch a thing. No dashboards, no builders, no back-and-forth. We handle everything.</p>
+        <span class="step-bg-num">02</span>
+      </div>
+      <div class="step js-reveal js-reveal-d2">
+        <p class="step-num">STEP 03</p>
+        <h3>You Get Calls</h3>
+        <p>Your site goes live, starts ranking locally, and turns visitors into calls. Keep doing what you're good at. We'll handle the rest.</p>
+        <span class="step-bg-num">03</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTENT SYSTEM -->
-  <section class="content-system" id="work">
-    <div class="wrap">
-      <div class="content-top">
-        <div class="content-top-left reveal">
-          <p class="content-label">Instagram System</p>
-          <h2>We post it.<br>You profit from it.</h2>
-        </div>
-        <p class="content-top-right reveal reveal-delay-1">Four types of posts, rotating every week. Your feed stays active, professional, and full of work that makes people pick up the phone.</p>
+<!-- ═══════════════════════════════════════════
+     FEATURES
+═══════════════════════════════════════════ -->
+<section class="features" id="features">
+  <div class="wrap">
+    <p class="section-label js-reveal">What's Included</p>
+    <h2 class="section-heading js-reveal js-reveal-d1">EVERYTHING<br>YOU NEED.</h2>
+    <div class="feature-rows">
+      <div class="feature-row js-reveal">
+        <span class="feature-row-num">01</span>
+        <span class="feature-row-title">Mobile-First Design</span>
+        <span class="feature-row-body">Most of your customers are searching on their phones. Your site loads fast and looks sharp on every screen — not an afterthought.</span>
       </div>
-
-      <div class="pillars">
-        <div class="pillar reveal">
-          <p class="pillar-num">01</p>
-          <h4>Before &amp; After</h4>
-          <p>Nothing sells like a side-by-side. Show the mess, then the magic.</p>
-        </div>
-        <div class="pillar reveal reveal-delay-1">
-          <p class="pillar-num">02</p>
-          <h4>Reviews</h4>
-          <p>Real words from real customers. The kind of proof that makes strangers trust you instantly.</p>
-        </div>
-        <div class="pillar reveal reveal-delay-2">
-          <p class="pillar-num">03</p>
-          <h4>Tips &amp; Education</h4>
-          <p>Quick trade knowledge that makes homeowners think "this person knows their stuff."</p>
-        </div>
-        <div class="pillar reveal reveal-delay-3">
-          <p class="pillar-num">04</p>
-          <h4>Local Presence</h4>
-          <p>Tag the town, show the crew, rep the area. People hire local — remind them you're right here.</p>
-        </div>
+      <div class="feature-row js-reveal">
+        <span class="feature-row-num">02</span>
+        <span class="feature-row-title">Local SEO Built In</span>
+        <span class="feature-row-body">We optimize every page so you show up when someone in your area searches for your service. Real traffic, no guesswork.</span>
       </div>
-
-    </div>
-  </section>
-
-  <!-- TRUST -->
-  <section class="trust">
-    <div class="wrap">
-      <div class="trust-inner reveal">
-        <div class="trust-stat">
-          <span class="trust-val">CT</span>
-          <span class="trust-desc">Based &amp; Local</span>
-        </div>
+      <div class="feature-row js-reveal">
+        <span class="feature-row-num">03</span>
+        <span class="feature-row-title">Click-to-Call &amp; Forms</span>
+        <span class="feature-row-body">One tap to call. A clean contact form for after-hours leads. Every visitor has an easy, frictionless path to reach you.</span>
+      </div>
+      <div class="feature-row js-reveal">
+        <span class="feature-row-num">04</span>
+        <span class="feature-row-title">Hosting &amp; Security</span>
+        <span class="feature-row-body">Fast hosting, SSL certificate, uptime monitoring. All covered. You'll never deal with a hosting company or a broken site.</span>
+      </div>
+      <div class="feature-row js-reveal">
+        <span class="feature-row-num">05</span>
+        <span class="feature-row-title">Ongoing Updates</span>
+        <span class="feature-row-body">Add a service, update hours, swap a photo — just message us. Updates are always included and handled same day.</span>
+      </div>
+      <div class="feature-row js-reveal">
+        <span class="feature-row-num">06</span>
+        <span class="feature-row-title">Reviews &amp; Social Proof</span>
+        <span class="feature-row-body">We pull in your Google reviews and testimonials where they matter most — turning first-time visitors into calls.</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="wrap">
-      <div style="text-align:center;max-width:560px;margin:0 auto;" class="reveal">
-        <p class="contact-label" style="justify-content:center;">Get In Touch</p>
-        <h2 style="font-size:clamp(2rem,4vw,3rem);margin-bottom:24px;">Let's build<br>something.</h2>
-        <p style="font-size:0.95rem;color:var(--muted);line-height:1.75;margin-bottom:48px;font-weight:300;">Ready to grow your brand? Reach out — we'll come back with a plan, not a sales pitch.</p>
-        <div style="display:flex;flex-direction:column;gap:16px;align-items:center;">
-          <a href="mailto:caminoressi@gmail.com" style="font-family:var(--serif);font-size:1.2rem;color:var(--charcoal);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px;transition:color 0.3s ease;">caminoressi@gmail.com</a>
-          <a href="tel:+12037672772" style="font-size:0.85rem;letter-spacing:2px;color:var(--muted);text-decoration:none;font-weight:300;transition:color 0.3s ease;">(203) 767-2772</a>
+<!-- ═══════════════════════════════════════════
+     DARK CTA
+═══════════════════════════════════════════ -->
+<section class="cta-section">
+  <div class="wrap">
+    <div class="cta-inner">
+      <div class="cta-left js-reveal">
+        <h2>
+          YOUR TRADE.<br>
+          YOUR SITE.<br>
+          <em>Your exclusive code.</em>
+        </h2>
+        <p>Every trade gets its own discount code. Click below and yours gets applied automatically at checkout. No copying, no pasting.</p>
+      </div>
+      <div class="cta-right js-reveal js-reveal-d1">
+        <div class="code-reveal">
+          <p class="code-reveal-label">Your exclusive code</p>
+          <p class="code-reveal-value placeholder" id="codeRevealVal">Select your trade above</p>
         </div>
+        <p class="code-note" id="codeRevealNote">Applied automatically at checkout when you click below.</p>
+        <button class="cta-primary" data-action="buy">Claim Code &amp; Get Started →</button>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="wrap">
-      <div class="footer-inner">
-        <p class="footer-logo">CR Brand Group</p>
-        <p class="footer-mid">&copy; 2026 CR Brand Group</p>
-        <div class="footer-links">
-          <a href="#services">Services</a>
-          <a href="#work">Work</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#contact">Contact</a>
-        </div>
+<!-- ═══════════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════════ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-split js-reveal">
+      <div class="contact-left">
+        <h2>QUESTIONS?<br><em>Let's talk.</em></h2>
+        <p>Not ready to buy yet? Reach out — we'll answer any questions, show you examples, and tell you exactly what your site would look like.</p>
+      </div>
+      <div class="contact-right">
+        <a href="mailto:caminoressi@gmail.com" class="contact-link">caminoressi@gmail.com</a>
+        <a href="tel:+12037672772" class="contact-phone">(203) 767-2772</a>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    // ── Nav toggle
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p class="footer-logo">CR Brand <span>Group</span></p>
+    <p class="footer-copy">&copy; 2026 CR Brand Group — Fairfield, CT</p>
+    <nav class="footer-nav">
+      <a href="#process">Process</a>
+      <a href="#features">Included</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
 
-    navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('active');
+<!-- ═══════════════════════════════════════════
+     BUY MODAL
+═══════════════════════════════════════════ -->
+<div id="modalBackdrop">
+  <div class="modal">
+    <button class="modal-close" id="modalCloseBtn">✕</button>
+    <div class="modal-top">
+      <p class="modal-eyebrow" id="modalEyebrow">Your Trade Discount</p>
+      <p class="modal-title" id="modalTitle">YOUR SITE.<br>YOUR PRICE.</p>
+    </div>
+    <div class="modal-body">
+      <div class="modal-code-block">
+        <div class="modal-code-left">
+          <p class="modal-code-lbl">Your exclusive code</p>
+          <p class="modal-code-val" id="modalCodeVal">—</p>
+        </div>
+        <button class="modal-copy" id="modalCopyBtn">Copy</button>
+      </div>
+      <p class="modal-code-note">This code is applied automatically when you click below.</p>
+      <div class="modal-price-line">
+        <span class="modal-price-num"><s style="opacity:0.25;font-size:0.55em;vertical-align:middle;">$149</s> $0</span>
+        <span class="modal-price-per">first month free</span>
+      </div>
+      <a class="modal-stripe-btn" id="modalStripeLink" href="#" target="_blank" rel="noopener noreferrer">
+        Claim Discount &amp; Get Started →
+      </a>
+      <p class="modal-fine">No contract · Cancel anytime · Live in days</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ── Constants ── */
+  const STRIPE_BASE  = 'https://buy.stripe.com/aFa6oI5M9a9EcXq7Ypew801';
+  const STRIPE_EMAIL = 'Vctorflr%40gmail.com';
+
+  const TRADES = {
+    PAINTER:     'PAINTER',
+    PLUMBER:     'PLUMBER',
+    ROOFER:      'ROOFER',
+    HANDYMAN:    'HANDYMAN',
+    HVAC:        'HVAC',
+    CONTRACTOR:  'CONTRACTOR',
+    ELECTRICIAN: 'ELECTRICIAN',
+    DRYWALL:     'DRYWALL',
+  };
+
+  /* ── State ── */
+  let currentTrade = null;
+
+  /* ── DOM refs ── */
+  const overlay       = document.getElementById('tradeOverlay');
+  const navTradePill  = document.getElementById('navTradePill');
+  const navTradeName  = document.getElementById('navTradeName');
+  const codeRevealVal = document.getElementById('codeRevealVal');
+  const codeRevealNote= document.getElementById('codeRevealNote');
+
+  const modalBackdrop = document.getElementById('modalBackdrop');
+  const modalCodeVal  = document.getElementById('modalCodeVal');
+  const modalStripeLink = document.getElementById('modalStripeLink');
+  const modalCopyBtn  = document.getElementById('modalCopyBtn');
+  const modalCloseBtn = document.getElementById('modalCloseBtn');
+
+  const navHamburger  = document.getElementById('navHamburger');
+  const navLinks      = document.getElementById('navLinks');
+
+  /* ── Trade selection ── */
+  function selectTrade(trade) {
+    if (!TRADES[trade]) return;
+    currentTrade = trade;
+
+    try { sessionStorage.setItem('crbg_trade', trade); } catch(e) {}
+    try { localStorage.setItem('crbg_trade', trade); } catch(e) {}
+
+    overlay.classList.add('dismissed');
+
+    navTradeName.textContent = trade;
+    navTradePill.classList.add('show');
+
+    codeRevealVal.textContent = trade;
+    codeRevealVal.classList.remove('placeholder');
+    if (codeRevealNote) codeRevealNote.textContent = 'Code "' + trade + '" applied automatically at checkout.';
+
+    /* Reveal hero elements */
+    document.querySelectorAll('.hero .js-reveal').forEach(el => el.classList.add('visible'));
+  }
+
+  /* ── Modal ── */
+  function openModal() {
+    if (!currentTrade) {
+      overlay.classList.remove('dismissed');
+      return;
+    }
+    modalCodeVal.textContent = currentTrade;
+    modalStripeLink.href = STRIPE_BASE + '?prefilled_promo_code=' + currentTrade + '&prefilled_email=' + STRIPE_EMAIL;
+    modalBackdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modalBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  /* ── Event delegation — catches ALL clicks ── */
+  document.addEventListener('click', function (e) {
+    /* Buy triggers */
+    if (e.target.closest('[data-action="buy"]')) {
+      e.preventDefault();
+      openModal();
+      return;
+    }
+
+    /* Trade row selection */
+    const tradeRow = e.target.closest('[data-trade]');
+    if (tradeRow) {
+      selectTrade(tradeRow.dataset.trade);
+      return;
+    }
+
+    /* Nav trade pill — reopen selector */
+    if (e.target.closest('#navTradePill')) {
+      overlay.classList.remove('dismissed');
+      return;
+    }
+
+    /* Modal backdrop */
+    if (e.target === modalBackdrop) {
+      closeModal();
+      return;
+    }
+
+    /* Modal close button */
+    if (e.target.closest('#modalCloseBtn')) {
+      closeModal();
+      return;
+    }
+
+    /* Nav hamburger */
+    if (e.target.closest('#navHamburger')) {
+      navHamburger.classList.toggle('active');
       navLinks.classList.toggle('open');
+      return;
+    }
+
+    /* Nav link — close mobile menu */
+    if (e.target.closest('#navLinks a')) {
+      navHamburger.classList.remove('active');
+      navLinks.classList.remove('open');
+    }
+  });
+
+  /* Copy code */
+  modalCopyBtn.addEventListener('click', function () {
+    if (!currentTrade) return;
+    navigator.clipboard.writeText(currentTrade).then(function () {
+      modalCopyBtn.textContent = 'Copied!';
+      setTimeout(function () { modalCopyBtn.textContent = 'Copy'; }, 2000);
+    }).catch(function () {
+      modalCopyBtn.textContent = currentTrade;
     });
+  });
 
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navToggle.classList.remove('active');
-        navLinks.classList.remove('open');
-      });
+  /* Escape key */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  /* ── Restore saved trade ── */
+  (function restoreTrade() {
+    let saved = null;
+    try { saved = sessionStorage.getItem('crbg_trade'); } catch(e) {}
+    if (!saved) { try { saved = localStorage.getItem('crbg_trade'); } catch(e) {} }
+    if (saved && TRADES[saved]) {
+      selectTrade(saved);
+    } else {
+      /* No saved trade: make sure hero reveal waits */
+    }
+  }());
+
+  /* ── Scroll reveal ── */
+  const revealObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObs.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
 
-    // ── Reveal on scroll
-    const revealEls = document.querySelectorAll('.reveal');
+  document.querySelectorAll('.js-reveal').forEach(function (el) {
+    revealObs.observe(el);
+  });
 
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-
-    revealEls.forEach(el => revealObserver.observe(el));
-
-    // Trigger hero immediately
-    requestAnimationFrame(() => {
-      document.querySelectorAll('.hero .reveal').forEach(el => {
-        el.classList.add('is-visible');
-      });
-    });
-
-  </script>
-
+}());
+</script>
 </body>
 </html>
